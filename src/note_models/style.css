@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.card {
+  padding: 2em 1em;
+  font-family: "Google Sans Flex", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.agap-acronym {
+  font-family: "Google Sans Flex", "Montserrat", sans-serif;
+  font-size: 4em; /* Standard sizing */
+  font-size: clamp(1.8em, 12vw, 4em); /* Responsive scaling */
+  font-weight: 900;
+  color: #3498db;
+  margin-bottom: 0.3em;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.nightMode .agap-acronym, .night_mode .agap-acronym {
+  color: #3498db;
+}
+
+.agap-full-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em 0;
+}
+
+.agap-logo img, .agap-logo-centered img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+}
+
+.agap-logo-centered {
+  margin: 2em 0;
+}
+
+.agap-info {
+  margin-top: 1.5em;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #bdc3c7;
+}
+
+.nightMode .agap-info, .night_mode .agap-info {
+  color: #bdc3c7;
+}
+
+.agap-hint {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin-top: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin: 2em 0;
+}
+
+.nightMode hr, .night_mode hr {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}

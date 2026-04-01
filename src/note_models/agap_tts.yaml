@@ -1,0 +1,21 @@
+name: PH Agencies (AGAP) [TTS]
+id: c7d8e9f0-a1b2-3c4d-5e6f-7a8b9c0d1e2f
+css_file: src/note_models/style.css
+fields:
+  - name: Acronym
+    font: Arial
+  - name: Pronunciation
+    font: Arial
+  - name: FullName
+    font: Arial
+  - name: Logo
+    font: Arial
+  - name: Info
+    font: Arial
+templates:
+  - name: "Acronym -> FullName (TTS)"
+    html_file: src/note_models/templates/agap/AcronymToName_TTS.html
+  - name: "FullName -> Acronym (TTS)"
+    html_file: src/note_models/templates/agap/NameToAcronym_TTS.html
+  - name: "Logo -> Acronym (TTS)"
+    html_file: src/note_models/templates/agap/LogoToAcronym_TTS.html

@@ -1,0 +1,10 @@
+archiver/
+build/
+vendor/
+src/note_models/templates/generated/
+
+.DS_Store
+Thumbs.db
+~$*
+.idea
+NOTES.md
