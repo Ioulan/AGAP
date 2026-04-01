@@ -1,0 +1,27 @@
+name: Integrity check
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.14
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.14'
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pipenv
+        pipenv install
+
+    - name: Validate AGAP & AGAP_TTS decks
+      run: |
+        pipenv run build
+
+      # TODO: Validate the csv file structure

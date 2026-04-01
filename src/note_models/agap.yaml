@@ -1,0 +1,21 @@
+name: PH Agencies (AGAP)
+id: 5b6c7d8e-9a0b-1c2d-3e4f-5a6b7c8d9e1e
+css_file: src/note_models/style.css
+fields:
+  - name: Acronym
+    font: Arial
+  - name: Pronunciation
+    font: Arial
+  - name: FullName
+    font: Arial
+  - name: Logo
+    font: Arial
+  - name: Info
+    font: Arial
+templates:
+  - name: "Acronym -> FullName"
+    html_file: src/note_models/templates/agap/AcronymToName.html
+  - name: "FullName -> Acronym"
+    html_file: src/note_models/templates/agap/NameToAcronym.html
+  - name: "Logo -> Acronym"
+    html_file: src/note_models/templates/agap/LogoToAcronym.html

@@ -1,0 +1,68 @@
+- build_parts:
+  - note_model_from_yaml_part:
+      part_id: AGAP
+      file: src/note_models/agap.yaml
+  - note_model_from_yaml_part:
+      part_id: AGAP_TTS
+      file: src/note_models/agap_tts.yaml
+
+  - headers_from_yaml_part:
+      - part_id: agap_header
+        file: src/headers/default.yaml
+        override:
+          deck_description_html_file: src/headers/desc.html
+          crowdanki_uuid: "ba9c1a2d-3e4b-5c6d-a0a1-7d8b84e65842"
+          name: "AGAP"
+      - part_id: agap_tts_header
+        file: src/headers/default.yaml
+        override:
+          deck_description_html_file: src/headers/desc.html
+          crowdanki_uuid: "fa9c2b3e-4d5f-6a7b-8c9d-0d1e2f3a4b42"
+          name: "AGAP [TTS]"
+
+  - media_group_from_folder:
+      - part_id: logos
+        source: src/media/logos
+        recursive: true
+
+  - notes_from_csvs:
+      - part_id: agap_notes
+        note_model_mappings:
+          - note_models: [AGAP, AGAP_TTS]
+            columns_to_fields:
+              guid: guid
+              Acronym: Acronym
+              Pronunciation: Pronunciation
+              FullName: FullName
+              Logo: Logo
+              Info: Info
+              Tags: tags
+        file_mappings:
+          - file: src/data/agap.csv
+            note_model: AGAP
+
+- generate_crowd_anki:
+    folder: build/AGAP
+    headers: agap_header
+    media:
+      parts: [logos]
+    note_models:
+      parts:
+        - part_id: AGAP
+    notes:
+      part_id: agap_notes
+      override:
+        note_model: AGAP
+
+- generate_crowd_anki:
+    folder: build/AGAP_TTS
+    headers: agap_tts_header
+    media:
+      parts: [logos]
+    note_models:
+      parts:
+        - part_id: AGAP_TTS
+    notes:
+      part_id: agap_notes
+      override:
+        note_model: AGAP_TTS
